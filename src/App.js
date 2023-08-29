@@ -17,8 +17,9 @@ function App() {
       setResponses(prev => [...prev, { user: input, bot: result.data.choices[0].text }]);
       setInput('');
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error:", error.response ? error.response.data : error);
     }
+    
   };
 
   return (
